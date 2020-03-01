@@ -1,0 +1,11 @@
+/.git
+/.idea
+/__pycache__
+/attacks/__pychache__
+/datasets
+!/dataset/*.py
+/defenses
+!/defenses/*.py
+/model
+!/model/*.py
+/venv
