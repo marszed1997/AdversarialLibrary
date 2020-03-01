@@ -7,5 +7,6 @@ datasets/__pycache__/
 datasets/cifar10/
 datasets/cifar10_FGSM/
 datasets/cifar10_PGD/
+datasets/text/
 model/*.pth
 model/__pycache__/
