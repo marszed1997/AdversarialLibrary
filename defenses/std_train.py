@@ -12,7 +12,6 @@ from datasets import dataset as dtst
 class StdTrain(TrainBase):
     def __init__(self, net, dataset, model_path):
         super().__init__(net, dataset, model_path)
-        self.optimizer = optim.Adam(self.net.parameters(), lr=0.04, weight_decay=5e-4)
 
     def attack_method(cls, net, data, label, **kwargs):
         pass
@@ -28,7 +27,7 @@ if __name__ == "__main__":
     net = Model.resnet50()
     train_dataset = dtst.cifar10("../" + args.std_CIFAR10Dataset_dir).train_data()
     test_dataset = dtst.cifar10("../" + args.std_CIFAR10Dataset_dir).test_data()
-    TradesObject = StdTrain(net, train_dataset, "../" + args.std_CIFAR10Model_path)
-    TradesObject.train(test_dataset, "std")
-
+    TrainObject = StdTrain(net, train_dataset, "../" + args.std_CIFAR10Model_path)
+    # TradesObject.train(test_dataset, "std")
+    acc = TrainObject.print_acc(net, test_dataset)
 
